@@ -1,4 +1,4 @@
-# 🏥 Low-Level Hospital Emergency Room Triage Engine
+# 🏥 Hospital Emergency Room System
 ### High-Performance Priority Simulation Framework in Pure C++
 
 [![Language](https://img.shields.io/badge/Language-C%2B%2B11%2F14%2F17-00599C.svg?style=flat-square&logo=c%2B%2B)](https://en.wikipedia.org/wiki/C%2B%2B)
