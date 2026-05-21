@@ -153,7 +153,7 @@ Where:
 
 # 📖 User Manual
 
-# 🖥️ Main Menu
+## 🖥️ Main Menu
 
 When the program starts, the following menu appears:
 
@@ -168,7 +168,7 @@ When the program starts, the following menu appears:
 
 ---
 
-# 1️⃣ Register Patient
+## 1️⃣ Register Patient
 
 Allows the user to:
 - Register a new patient
@@ -196,7 +196,7 @@ The system:
 
 ---
 
-# 2️⃣ Treat Next Patient
+## 2️⃣ Treat Next Patient
 
 The system:
 - Removes the highest-priority patient from the queue
@@ -207,7 +207,7 @@ Patients with lower priority values are treated first.
 
 ---
 
-# 3️⃣ Display Emergency Queue
+## 3️⃣ Display Emergency Queue
 
 Displays:
 - All waiting patients
@@ -218,7 +218,7 @@ This helps visualize how the Min-Heap works.
 
 ---
 
-# 4️⃣ Display Treatment Log
+## 4️⃣ Display Treatment Log
 
 Displays all treated patients in chronological order.
 
@@ -230,7 +230,7 @@ Information shown:
 
 ---
 
-# 5️⃣ Display Database Records
+## 5️⃣ Display Database Records
 
 Shows all stored patient records loaded from `patients.csv`.
 
@@ -241,7 +241,7 @@ Includes:
 
 ---
 
-# 6️⃣ Exit System
+## 6️⃣ Exit System
 
 Before shutting down, the system:
 - Saves all patient records
