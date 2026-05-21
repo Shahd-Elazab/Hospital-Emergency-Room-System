@@ -7,7 +7,7 @@
 
 A deterministic, real-time emergency department triage simulator designed to bypass standard first-come, first-served array limitations. The engine calculates an analytical clinical urgency score by dynamically cross-referencing acute active complaints with historical chronic risk profiles, shifting high-risk medical exceptions to the root of a tracking register immediately.
 
-Developed to demonstrate theoretical spatial optimization and low-level abstract pointer mechanics for **CSE123: Data Structures and Algorithms** at the Egypt University of Informatics (EUI).
+Developed to demonstrate theoretical spatial optimization and low-level abstract pointer mechanics for **CSE123: Data Structures and Algorithms** at Egypt University of Informatics (EUI).
 
 ---
 
