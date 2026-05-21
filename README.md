@@ -288,6 +288,7 @@ Spring 2026
 # 🖥️ Native Frameworkless Win32 Desktop GUI Engine (`main_gui.cpp`)
 The GUI version completely avoids using bulky UI engines (such as Electron or Qt) by communicating directly with the Windows kernel via native Win32 system calling wrappers (`windows.h` and `commctrl.h`).
 * **Graphical Heap Tree Visualizer:** Includes a built-in custom drawing system. By wrapping analytical coordinate formulas (`sin`, `cos`, and tree-depth multipliers), the interface renders the memory state of the binary min-heap array directly into a GDI graphics view layout on screen. Developers can watch heap nodes shift position in real time as patients are processed.
+* You can run main_gui.cpp on Code::Blocks (Win32 GUI project).
 
 ---
 
