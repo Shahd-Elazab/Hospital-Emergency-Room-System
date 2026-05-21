@@ -301,6 +301,5 @@ The GUI version completely avoids using bulky UI engines (such as Electron or Qt
 │   ├── patients.csv        # Semicolon-delimited historical patient logs
 │   └── symptoms_ref.csv    # Central clinical severity classification mapping
 └── docs/
-    ├── CSE PROJECT REPORT.pdf
-    ├── README.md
-    └── Hospital emergency system-Data structures project.pptx
+    └── README.md
+    
