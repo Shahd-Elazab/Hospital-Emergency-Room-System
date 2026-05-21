@@ -1,42 +1,289 @@
-# 🏥 Hospital Emergency Room System
-### High-Performance Priority Simulation Framework in Pure C++
+# 🏥 Hospital Emergency System
 
-[![Language](https://img.shields.io/badge/Language-C%2B%2B11%2F14%2F17-00599C.svg?style=flat-square&logo=c%2B%2B)](https://en.wikipedia.org/wiki/C%2B%2B)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%2F%20POSIX-0078D4.svg?style=flat-square&logo=windows)](https://microsoft.com)
-[![Architecture](https://img.shields.io/badge/Architecture-Manual%20Memory%20%2F%20Zero--STL-FF6B6B.svg?style=flat-square)](#)
-
-A deterministic, real-time emergency department triage simulator designed to bypass standard first-come, first-served array limitations. The engine calculates an analytical clinical urgency score by dynamically cross-referencing acute active complaints with historical chronic risk profiles, shifting high-risk medical exceptions to the root of a tracking register immediately.
-
-Developed to demonstrate theoretical spatial optimization and low-level abstract pointer mechanics for **CSE123: Data Structures and Algorithms** at Egypt University of Informatics (EUI).
+A C++-based **Emergency Room Patient Management System** that simulates real-world hospital triage operations using custom-built data structures and algorithms.
 
 ---
 
-### 1. The Priority Sorting Engine (`EmergencyQueue`)
-* **Data Structure:** Pointer-Array Backed Complete Binary Min-Heap.
-* **Algorithmic Complexity:** $O(1)$ Maximum Urgency Retrieval, $O(\log n)$ Sink/Swim Heapification.
-* **Implementation Details:** Operates by continually balancing the heap layout through recursive mathematical indexing shifts. The absolute highest-risk configuration is bound to array zero, allowing medical teams to retrieve the next target assignment instantly without exhaustive index sweeps.
+# 📌 Project Overview
 
-### 2. Chronological Medical History Logs (`MedicalHistoryList`)
-* **Data Structure:** Singly-Linked List Utilizing Explicit `HistoryNode` Structs.
-* **Algorithmic Complexity:** $O(1)$ Front Insertion, Linear Space Mapping.
-* **Implementation Details:** Captures continuous medical trends per patient file over multi-session lifetimes. Appending fresh diagnostic flags is done via explicit reference re-pointing to completely avoid memory reallocations or vector-shifting cascades.
+The **Hospital Emergency System** is designed to manage patients in an emergency room by prioritizing critical cases based on symptom severity and medical history.
 
-### 3. Current Live Session Audit Trails (`TreatmentLog`)
-* **Data Structure:** Fixed-Size Linear FIFO Queue.
-* **Algorithmic Complexity:** $O(1)$ Enqueue/Dequeue.
-* **Implementation Details:** Isolates processed records during active terminal lifecycles, establishing a localized transactional trail prior to updating disk database arrays.
+The system applies core **Data Structures & Algorithms** concepts by implementing all major structures manually without using built-in STL structures such as `<queue>` or `<list>`.
+
+This project demonstrates:
+- Custom linked lists
+- Binary Min-Heap implementation
+- FIFO queue processing
+- File handling with CSV
+- Dynamic memory management
+- Object-Oriented Programming in C++
 
 ---
 
-## ⚡ Key Engineering Challenges Overcome
+# 🚀 Features
 
-### 🔁 Elimination of Circular Compilation Dependencies
-Because the `Patient` class holds reference logic containing the master `PatientDatabase` and vice-versa, standard header inclusion structures result in circular compilation faults. 
-* **The Solution:** The engine splits declaration and operational execution through **Forward Declarations** and **Delayed Implementation Layouts**. Class architectures are safely introduced to the compiler ahead of instantiation loops, keeping code execution tight and error-free:
-  1. Forward declare `PatientDatabase`.
-  2. Declare `Patient` structure prototype variables.
-  3. Declare complete `PatientDatabase` structural scopes.
-  4. Implement downstream constructor functions only after all interfaces are registered with the compiler.
+✅ Register new patients  
+✅ Handle returning patients using saved records  
+✅ Automatically calculate patient urgency levels  
+✅ Prioritize emergency cases dynamically  
+✅ Maintain complete medical history records  
+✅ Save and load patient data using CSV files  
+✅ Log treated patients chronologically  
+✅ Display the emergency queue as a heap/tree structure  
+
+---
+
+# 🧠 Data Structures Used
+
+| Data Structure | Purpose |
+|---|---|
+| Singly Linked List | Stores patient medical history |
+| Binary Min-Heap | Emergency priority queue |
+| FIFO Queue | Treatment history log |
+| Vector Cache | In-memory patient database |
+
+---
+
+# ⚙️ System Workflow
+
+1. Patient enters the ER
+2. System checks whether the patient already exists
+3. Current symptom severity is retrieved
+4. Medical history risk is calculated
+5. Final priority score is generated
+6. Patient is inserted into the Min-Heap queue
+7. Most urgent patient is treated first
+8. Treatment is archived into the history log
+9. Data is saved permanently into CSV files
+
+---
+
+# 🏗️ Main Modules
+
+## 1. Patient
+Stores:
+- Patient ID
+- Name
+- Current symptom
+- Priority score
+- Medical history
+
+### Key Functions
+- `finalizePriority()`
+- `setNewSymptom()`
+- `archiveCurrentSymptom()`
+
+---
+
+## 2. MedicalHistoryList
+Custom singly linked list used to store:
+- Previous symptoms
+- Risk severity scores
+
+### Key Functions
+- `addRecord()`
+- `calculateTotalRisk()`
+- `printHistory()`
+
+---
+
+## 3. EmergencyQueue
+Custom Binary Min-Heap implementation.
+
+Responsible for:
+- Sorting patients by urgency
+- Ensuring critical patients are treated first
+
+### Key Functions
+- `enqueue()`
+- `dequeue()`
+- `heapifyUp()`
+- `heapifyDown()`
+
+---
+
+## 4. PatientDatabase
+Handles:
+- File reading/writing
+- Loading previous patients
+- Persistent storage
+
+### Files Used
+- `patients.csv`
+- `symptoms_ref.csv`
+
+---
+
+## 5. TreatmentLog
+FIFO queue that stores treated patients chronologically.
+
+### Key Functions
+- `addToLog()`
+- `displayLog()`
+
+---
+
+# 📊 Complexity Analysis
+
+| Operation | Time Complexity |
+|---|---|
+| Linked List Insert | O(1) |
+| History Risk Calculation | O(n) |
+| Heap Insert | O(log n) |
+| Heap Remove | O(log n) |
+| Patient Search | O(v) |
+| Save to File | O(v × n) |
+
+Where:
+- `n` = number of medical history records
+- `v` = number of patients
+
+---
+
+# 🛠️ Technologies Used
+
+- C++
+- OOP Concepts
+- Dynamic Memory Allocation
+- CSV File Handling
+- Custom Data Structures
+- Heap Algorithms
+
+---
+
+# 📖 User Manual
+
+# 🖥️ Main Menu
+
+When the program starts, the following menu appears:
+
+```text
+1. Register Patient
+2. Treat Next Patient
+3. Display Emergency Queue
+4. Display Treatment Log
+5. Display Database Records
+6. Exit
+```
+
+---
+
+# 1️⃣ Register Patient
+
+Allows the user to:
+- Register a new patient
+- Process a returning patient
+
+## New Patient
+The system asks for:
+- Patient name
+- Current symptom
+
+The system then:
+- Generates a unique ID
+- Calculates priority
+- Inserts patient into the emergency queue
+
+## Returning Patient
+The system asks for:
+- Existing patient ID
+- New symptom
+
+The system:
+- Loads previous history
+- Calculates updated risk
+- Reprioritizes the patient
+
+---
+
+# 2️⃣ Treat Next Patient
+
+The system:
+- Removes the highest-priority patient from the queue
+- Archives the symptom
+- Stores the patient in the treatment log
+
+Patients with lower priority values are treated first.
+
+---
+
+# 3️⃣ Display Emergency Queue
+
+Displays:
+- All waiting patients
+- Their priority values
+- Heap/tree structure representation
+
+This helps visualize how the Min-Heap works.
+
+---
+
+# 4️⃣ Display Treatment Log
+
+Displays all treated patients in chronological order.
+
+Information shown:
+- Patient ID
+- Name
+- Symptom
+- Priority
+
+---
+
+# 5️⃣ Display Database Records
+
+Shows all stored patient records loaded from `patients.csv`.
+
+Includes:
+- IDs
+- Names
+- Medical history
+
+---
+
+# 6️⃣ Exit System
+
+Before shutting down, the system:
+- Saves all patient records
+- Updates CSV files
+- Frees dynamically allocated memory
+
+---
+
+# ✅ Testing & Validation
+
+The system was tested for:
+- Correct queue prioritization
+- Proper heap balancing
+- Accurate treatment logging
+- File loading/saving
+- Invalid input handling
+- Memory cleanup
+
+---
+
+# 📚 Educational Concepts Demonstrated
+
+- Linked Lists
+- Binary Heaps
+- Queues
+- Dynamic Memory
+- File Persistence
+- Object-Oriented Programming
+- Complexity Analysis
+- Pointer Manipulation
+
+---
+
+# 📄 License
+
+This project was developed for educational purposes as part of:
+
+**CSE123 – Data Structures and Algorithms**  
+Spring 2026
+
+---
+
 
 ### 🖥️ Native Frameworkless Win32 Desktop GUI Engine (`main_gui.cpp`)
 The GUI version completely avoids using bulky UI engines (such as Electron or Qt) by communicating directly with the Windows kernel via native Win32 system calling wrappers (`windows.h` and `commctrl.h`).
@@ -55,4 +302,5 @@ The GUI version completely avoids using bulky UI engines (such as Electron or Qt
 │   └── symptoms_ref.csv    # Central clinical severity classification mapping
 └── docs/
     ├── CSE PROJECT REPORT.pdf
+    ├── README.md
     └── Hospital emergency system-Data structures project.pptx
