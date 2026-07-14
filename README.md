@@ -1,6 +1,6 @@
 # 🏥 Hospital Emergency System
 
-A C++-based **Emergency Room Patient Management System** that simulates real-world hospital triage operations using custom-built data structures and algorithms.
+A C++ based **Emergency Room Patient Management System** that simulates real-world hospital triage operations using custom-built data structures and algorithms.
 
 ---
 
